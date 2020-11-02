@@ -38,7 +38,14 @@ for right_index in range(len(deck) - 1, 1, -1):
 print(deck[0:52])
 
 # Deal the cards
+hand = []
 
 # - Add the first 2 cards from the shuffled deck to the player hand
+hand.append(deck[0])
+hand.append(deck[1])
 # - Show the 2 cards
+print(hand[0:2])
 # - Remove the 2 cards from the deck
+deck.remove(deck[0])
+deck.remove(deck[0])
+print(deck)
