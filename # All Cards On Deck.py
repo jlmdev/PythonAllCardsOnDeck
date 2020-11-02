@@ -1,4 +1,5 @@
 # All Cards On Deck
+import random
 
 # Create Deck
 deck = []
@@ -22,11 +23,19 @@ print(deck[0:52])
 # Shuffle
 
 # - Loop through the deck from the last card index to the first (deck[rightIndex])
-#   - Randomly Pick a card index before the rightIndex (deck[LeftIndex])
-#   - Assign the value of the deck[rightIndex] to leftCard
-#   - Assign the value of deck[leftIndex] to rightCard
-#   - Assign the value of rightCard to deck[rightIndex]
-#   - Assign the value of leftCard to deck[leftIndex]
+for right_index in range(len(deck) - 1, 1, -1):
+    #   - Randomly Pick a card index before the rightIndex (deck[LeftIndex])
+    left_index = random.randint(0, right_index)
+    #   - Assign the value of the deck[rightIndex] to leftCard
+    left_card = deck[right_index]
+    #   - Assign the value of deck[leftIndex] to rightCard
+    right_card = deck[left_index]
+    #   - Assign the value of rightCard to deck[rightIndex]
+    deck[right_index] = right_card
+    #   - Assign the value of leftCard to deck[leftIndex]
+    deck[left_index] = left_card
+
+print(deck[0:52])
 
 # Deal the cards
 
